@@ -1,0 +1,27 @@
+cbmcArguments:
+ classpath: '/tools/cbmc/models-simple-overlay.jar:/tools/cbmc/models.jar:.'
+ depth: false
+ slice-function-calls: org\.slf4j\.Logger.*
+phases:
+-
+ timeout: 300
+ cbmcArguments:
+   java-assume-inputs-non-null: true
+   max-nondet-array-length: 10
+   java-version: 7
+   unwind: 1
+-
+ timeout: 300
+ cbmcArguments:
+   java-assume-inputs-non-null: true
+   max-nondet-array-length: 20
+   java-version: 7
+   unwind: 2
+-
+ timeout: 300
+ cbmcArguments:
+   java-assume-inputs-non-null: true
+   max-nondet-array-length: 30
+   max-nondet-string-length: 10
+   java-version: 7
+   unwind: 3
